@@ -8,12 +8,13 @@ function TaskCard({ task }) {
     return (
         <Card
             style={{ cursor: 'pointer', background: 'grey' }}
-            onClick={() => navigate(`/tasks/${task.id}`)}
+            onClick={() => navigate(`/proyectos/${task.id}`)}
             className="custom-card my-3 shadow" // Clases de Bootstrap para sombra y margen vertical
         >
             <Card.Body>
-                <Card.Title className="h5">{task.title}</Card.Title>
+                <Card.Title className="h5">{task.name}</Card.Title>
                 <Card.Text>{task.description}</Card.Text>
+                <Card.Text style={{color:'white'}}>Tecnología: {task.technology}</Card.Text>
                 <hr className="my-2" /> {/* Margen superior e inferior para la línea horizontal */}
             </Card.Body>
         </Card>
@@ -23,8 +24,9 @@ function TaskCard({ task }) {
 TaskCard.propTypes = {
     task: PropTypes.shape({
         id: PropTypes.number.isRequired,
-        title: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
+        technology: PropTypes.string.isRequired,
     }).isRequired,
 };
 

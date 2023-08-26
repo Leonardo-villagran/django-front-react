@@ -18,7 +18,7 @@ function TasksList() {
 
     return (
         <Container>
-            <h1 className="mt-4">Lista de Tareas</h1>
+            <h1 className="mt-4">Lista de Proyectos</h1>
             <Row>
                 {tasks.map(task => (
                     <Col xs={12} md={6} lg={4} key={task.id} className="mb-4">

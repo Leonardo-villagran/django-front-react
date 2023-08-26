@@ -37,7 +37,7 @@ function TaskformPage() {
 
             });
         }
-        navigate('/tasks');
+        navigate('/proyectos');
 
     });
 
@@ -47,14 +47,13 @@ function TaskformPage() {
                 console.log('obtienendo datos');
                 const {data} = await getTask(params.id);
                 console.log(data);
-                setValue('title', data.title);
+                setValue('name', data.name);
                 setValue('description', data.description);
+                setValue('technology', data.technology);
             }
         }
         loadTask();
     }, [params.id, setValue]);
-
-
 
     return (
         <div className="container mt-4">
@@ -63,10 +62,10 @@ function TaskformPage() {
                     <input
                         type="text"
                         className="form-control"
-                        placeholder="Título"
-                        {...register("title", { required: true })}
+                        placeholder="Nombre"
+                        {...register("name", { required: true })}
                     />
-                    {errors.title && <span className="text-danger">Este campo es requerido</span>}
+                    {errors.name && <span className="text-danger">Este campo es requerido</span>}
                 </div>
                 <div className="mb-3">
                     <textarea
@@ -77,6 +76,15 @@ function TaskformPage() {
                     />
                     {errors.description && <span className="text-danger">Este campo es requerido</span>}
                 </div>
+                <div className="mb-3">
+                    <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Tecnología"
+                        {...register("technology", { required: true })}
+                    />
+                    {errors.technology && <span className="text-danger">Este campo es requerido</span>}
+                </div>               
                 <button type="submit" className="btn btn-primary">Enviar</button>
             </form>
             {params.id && (
@@ -93,7 +101,7 @@ function TaskformPage() {
                                     color:'white'
                                 }
                             });
-                            navigate('/tasks');
+                            navigate('/proyectos');
                             
                 
                         }

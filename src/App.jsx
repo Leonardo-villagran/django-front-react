@@ -10,15 +10,15 @@ const apiUrl = import.meta.env.VITE_API_URL;
 
 function App() {
   console.log('El modo es: ' + import.meta.env.MODE);
-  console.log('La ruta es: ' + apiUrl);
+  console.log('La dirección es: ' + apiUrl);
   return (
     <BrowserRouter>
       <Navigation />
       <Routes>
-        <Route path="/" element={<Navigate to="/tasks"/>} />
-        <Route path="/tasks" element={<TasksPage />} />
-        <Route path="/tasks-create" element={<TaskformPage />} />
-        <Route path="/tasks/:id" element={<TaskformPage />} />
+        <Route path="/" element={<Navigate to="/proyectos"/>} />
+        <Route path="/proyectos" element={<TasksPage />} />
+        <Route path="/crear-proyecto" element={<TaskformPage />} />
+        <Route path="/proyectos/:id" element={<TaskformPage />} />
       </Routes>
       <Toaster/>
     </BrowserRouter>

@@ -12,10 +12,10 @@ export function Navigation() {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
                         <Nav.Link as={NavLink} to="/" className="nav-link">
-                            Listar tareas
+                            Listar Proyectos
                         </Nav.Link>
-                        <Nav.Link as={NavLink} to="/tasks-create" className="nav-link">
-                            Crear tarea
+                        <Nav.Link as={NavLink} to="/crear-proyecto" className="nav-link">
+                            Crear Proyectos
                         </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
